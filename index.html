@@ -1,83 +1,184 @@
-# Travel Destination API Documentation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Destination API Documentation</title>
 
-## Overview
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
 
-This API returns a list of travel destination options based on the selected continent.
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
 
----
+    h1 {
+      color: #1e3a8a;
+      border-bottom: 3px solid #1e3a8a;
+      padding-bottom: 10px;
+    }
 
-# Base URL
+    h2 {
+      color: #2563eb;
+      margin-top: 30px;
+    }
 
-```text id="qrl39m"
-https://midterm26.onrender.com/api/destination_update.php
-```
+    p {
+      font-size: 16px;
+    }
 
----
+    code, pre {
+      background: #f1f5f9;
+      color: #0f172a;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+    }
 
-# Request Method
+    code {
+      padding: 3px 6px;
+    }
 
-```text id="qubliv"
-GET
-```
+    pre {
+      padding: 15px;
+      overflow-x: auto;
+      border-left: 4px solid #2563eb;
+    }
 
----
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      background: #ffffff;
+    }
 
-# Parameters
+    th {
+      background: #2563eb;
+      color: white;
+      padding: 12px;
+      text-align: left;
+    }
 
-| Parameter | Type   | Description    | Example |
-| --------- | ------ | -------------- | ------- |
-| continent | String | Continent code | AS / EU |
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+    }
 
----
+    tr:hover {
+      background: #f8fafc;
+    }
 
-# Supported Continent Codes
+    hr {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      margin: 30px 0;
+    }
 
-| Code | Continent |
-| ---- | --------- |
-| AS   | Asia      |
-| EU   | Europe    |
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
 
----
+<body>
+  <div class="container">
+    <h1>Travel Destination API Documentation</h1>
 
-# Example Response
+    <h2>Overview</h2>
+    <p>
+      This API returns a list of travel destination options based on the selected continent.
+    </p>
 
-## Request
+    <hr>
 
-```text id="p56r16"
-GET /api/destination_update.php?continent=AS
-```
+    <h2>Base URL</h2>
+    <pre>https://midterm26.onrender.com/api/destination_update.php</pre>
 
-## Response
+    <hr>
 
-```html id="utwh0j"
-<option value='Tokyo, Japan'>1. Tokyo, Japan</option>
-<option value='Seoul, South Korea'>2. Seoul, South Korea</option>
-<option value='Bali, Indonesia'>3. Bali, Indonesia</option>
-<option value='Bangkok, Thailand'>4. Bangkok, Thailand</option>
-<option value='Kyoto, Japan'>5. Kyoto, Japan</option>
-<option value='Hanoi, Vietnam'>6. Hanoi, Vietnam</option>
-```
+    <h2>Request Method</h2>
+    <p><span class="badge">GET</span></p>
 
----
+    <hr>
 
-# Error Responses
+    <h2>Parameters</h2>
+    <table>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td>continent</td>
+        <td>String</td>
+        <td>Continent code</td>
+        <td>AS / EU</td>
+      </tr>
+    </table>
 
-## Invalid Continent
+    <hr>
 
-```html id="x5w3kg"
-<option value=''>No destinations found</option>
-```
+    <h2>Supported Continent Codes</h2>
+    <table>
+      <tr>
+        <th>Code</th>
+        <th>Continent</th>
+      </tr>
+      <tr>
+        <td>AS</td>
+        <td>Asia</td>
+      </tr>
+      <tr>
+        <td>EU</td>
+        <td>Europe</td>
+      </tr>
+    </table>
 
-## Missing Parameter
+    <hr>
 
-```html id="v0djmu"
-<option value=''>Missing continent parameter</option>
-```
+    <h2>Example Response</h2>
 
----
+    <h3>Request</h3>
+    <pre>GET /api/destination_update.php?continent=AS</pre>
 
-# Content Type
+    <h3>Response</h3>
+    <pre>&lt;option value='Tokyo, Japan'&gt;1. Tokyo, Japan&lt;/option&gt;
+&lt;option value='Seoul, South Korea'&gt;2. Seoul, South Korea&lt;/option&gt;
+&lt;option value='Bali, Indonesia'&gt;3. Bali, Indonesia&lt;/option&gt;
+&lt;option value='Bangkok, Thailand'&gt;4. Bangkok, Thailand&lt;/option&gt;
+&lt;option value='Kyoto, Japan'&gt;5. Kyoto, Japan&lt;/option&gt;
+&lt;option value='Hanoi, Vietnam'&gt;6. Hanoi, Vietnam&lt;/option&gt;</pre>
 
-```text id="t3dofw"
-text/html
-```
+    <hr>
+
+    <h2>Error Responses</h2>
+
+    <h3>Invalid Continent</h3>
+    <pre>&lt;option value=''&gt;No destinations found&lt;/option&gt;</pre>
+
+    <h3>Missing Parameter</h3>
+    <pre>&lt;option value=''&gt;Missing continent parameter&lt;/option&gt;</pre>
+
+    <hr>
+
+    <h2>Content Type</h2>
+    <pre>text/html</pre>
+  </div>
+</body>
+</html>
