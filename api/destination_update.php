@@ -1,11 +1,10 @@
 <?php
-// destinations_update.php
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: text/html; charset=UTF-8");
 
-// Check if the 'continent' parameter is passed via the GET method
 if (isset($_GET['continent'])) {
     $continent = $_GET['continent'];
-    
-    // Return the appropriate options based on the selected continent
+
     if ($continent === 'AS') {
         echo "<option value='Tokyo, Japan'>1. Tokyo, Japan</option>";
         echo "<option value='Seoul, South Korea'>2. Seoul, South Korea</option>";
@@ -20,6 +19,10 @@ if (isset($_GET['continent'])) {
         echo "<option value='Berlin, Germany'>4. Berlin, Germany</option>";
         echo "<option value='Madrid, Spain'>5. Madrid, Spain</option>";
         echo "<option value='Athens, Greece'>6. Athens, Greece</option>";
+    } else {
+        echo "<option value=''>No destinations found</option>";
     }
+} else {
+    echo "<option value=''>Missing continent parameter</option>";
 }
 ?>
