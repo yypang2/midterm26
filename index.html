@@ -1,0 +1,83 @@
+# Travel Destination API Documentation
+
+## Overview
+
+This API returns a list of travel destination options based on the selected continent.
+
+---
+
+# Base URL
+
+```text id="qrl39m"
+https://midterm26.onrender.com/api/destination_update.php
+```
+
+---
+
+# Request Method
+
+```text id="qubliv"
+GET
+```
+
+---
+
+# Parameters
+
+| Parameter | Type   | Description    | Example |
+| --------- | ------ | -------------- | ------- |
+| continent | String | Continent code | AS / EU |
+
+---
+
+# Supported Continent Codes
+
+| Code | Continent |
+| ---- | --------- |
+| AS   | Asia      |
+| EU   | Europe    |
+
+---
+
+# Example Response
+
+## Request
+
+```text id="p56r16"
+GET /api/destination_update.php?continent=AS
+```
+
+## Response
+
+```html id="utwh0j"
+<option value='Tokyo, Japan'>1. Tokyo, Japan</option>
+<option value='Seoul, South Korea'>2. Seoul, South Korea</option>
+<option value='Bali, Indonesia'>3. Bali, Indonesia</option>
+<option value='Bangkok, Thailand'>4. Bangkok, Thailand</option>
+<option value='Kyoto, Japan'>5. Kyoto, Japan</option>
+<option value='Hanoi, Vietnam'>6. Hanoi, Vietnam</option>
+```
+
+---
+
+# Error Responses
+
+## Invalid Continent
+
+```html id="x5w3kg"
+<option value=''>No destinations found</option>
+```
+
+## Missing Parameter
+
+```html id="v0djmu"
+<option value=''>Missing continent parameter</option>
+```
+
+---
+
+# Content Type
+
+```text id="t3dofw"
+text/html
+```
